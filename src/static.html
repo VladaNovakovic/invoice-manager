@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</head>
+<body>
+<div class="main-container">
+    <div class="invoice-header">
+        <div class="invoice-header-container">
+            <h4>Edit invoice: #11331</h4>
+            <a href="#" class="header-link">Stripe</a>
+        </div>
+        <p>
+            <a class="breadcrubms" href="#">Stripe</a> /
+            <a class="breadcrumbs" href="#">Customer: Sonke Sprink (#9000305)</a> /
+            <a class="breadcrumbs" href="#">Invoices</a> /
+            <a class="breadcrumbs" href="#">Edit invoice: #11331</a>
+        </p>
+        <hr/>
+        <div>
+            <button>Cancel</button>
+        </div>
+    </div>
+    <div class="invoice-container">
+        <div class="invoice-edit-description">
+            <h3>Invoice correction</h3>
+            <p>Here you can edit your invoice data. Editing will cancel this invoice and create a cancellation invoice.
+                If you edit oone of the tabs below and save it you can no longer change the data to the other tab</p>
+        </div>
+        <div class="tabs-wrapper">
+            <div class="tab-buttons">
+                <div class="tab inactive">General information</div>
+                <div class="tab active">Invoice items</div>
+            </div>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                    <tr>
+                        <th style="width: 30%">Invoice item</th>
+                        <th style="width: 10%">Unit price</th>
+                        <th style="width: 10%">Quantity</th>
+                        <th style="width: 10%">Price</th>
+                        <th style="width: 10%">Discount in %</th>
+                        <th style="width: 10%">Discount in E</th>
+                        <th style="width: 10%">Discounted Amount in E</th>
+                    </tr>
+                    </thead>
+                    <tbody data-name="invoice-table-body">
+                    <tr data-name="invoice-row">
+                        <td data-name="invoiceItem"></td>
+                        <td data-name="unitPrice"></td>
+                        <td data-name="quantity"></td>
+                        <td data-name="price"></td>
+                        <td data-name="discountPercentage">
+                            <input
+                                    data-name="discountPercentageInput"
+                                    type="number"
+                                    value="0"
+                            />
+                        </td>
+                        <td data-name="discountEuro">
+                            <input
+                                    data-name="discountEuroInput"
+                                    type="number"
+                                    value="0"
+                                    disabled
+                            />
+                        </td>
+                        <td data-name="discountAmountEuro">
+                            <input
+                                    data-name="discountAmountEuroInput"
+                                    type="number"
+                            />
+                        </td>
+                    </tr>
+                    </tbody>
+                    <tfoot>
+                    <tr data-name="invoice-total-row">
+                        <td colspan="4"></td>
+                        <td data-name="totalDiscountPercentage">
+                            <input
+                                    data-name="totalDiscountPercentageInput"
+                                    type="number"
+                                    value="0"
+                            />
+                        </td>
+                        <td data-name="totalDiscountEuro">
+                            <input
+                                    data-name="totalDiscountEuroInput"
+                                    type="number"
+                                    value="0"
+                            />
+                        </td>
+                        <td data-name="totalDiscountedAmountEuro">
+                            <input
+                                    data-name="totalDiscountedAmountEuroInput"
+                                    type="number"
+                            />
+                        </td>
+                    </tr>
+                    <tr data-name="invoice-total-row">
+                        <td colspan="5"></td>
+                        <td>Original Price</td>
+                        <td data-name="originalPriceAmount"></td>
+                    </tr>
+                    <tr data-name="invoice-total-row">
+                        <td colspan="5"></td>
+                        <td>Discount Amount</td>
+                        <td data-name="discountAmount"></td>
+                    </tr>
+                    <tr data-name="invoice-total-row">
+                        <td colspan="5"></td>
+                        <td>Total</td>
+                        <td data-name="totalAmount"></td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!--<div class="cal">-->
+    <!--    <center>-->
+    <!--        <form><br>-->
+    <!--            <p>Result : <span id="display"></span></p>-->
+    <!--            <input type="number" class="input" placeholder="Enter first number" name="firstnumber" value="1" min="1" min="9" /><br>-->
+    <!--            <input type="number" class="input" placeholder="Enter second number" name="secondnumber" value="1" min="1" min="9" /><br><br>-->
+    <!--            <button type="submit" class="button">Subtract</button>-->
+    <!--        </form>-->
+    <!--    </center>-->
+    <!--</div>-->
+</div>
+</body>
+</html>
