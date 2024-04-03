@@ -1,5 +1,5 @@
 import {InvoiceController} from "../controller/InvoiceController";
-import {InvoiceItemData, InvoiceListRecord} from "../model/types";
+import {InvoiceData, InvoiceItemData, InvoiceListRecord} from "../model/types";
 import {Invoice} from "../model/Invoice";
 import {InvoiceUiElementsFactory} from "../InvoiceUiElementsFactory";
 import {InvoiceItemView} from "./InvoiceItemView";
@@ -13,7 +13,7 @@ export class InvoiceView {
     private readonly invoiceFactory: InvoiceUiElementsFactory;
     private readonly invoiceItemViewArray: InvoiceItemView[] = [];
 
-    constructor(document: Document, invoiceData: InvoiceItemData[]) {
+    constructor(document: Document, invoiceData: InvoiceData) {
         this.document = document;
 
         this.invoice = new Invoice(invoiceData);
@@ -23,6 +23,11 @@ export class InvoiceView {
         this.dataTable = document.querySelector('tbody[data-name="invoice-table-body"]');
 
         this.populateDataTable(this.invoice.getInvoiceItemsList());
+
+        document.querySelector("span[data-name='invoiceNumberHeader']").innerHTML = this.invoice.id;
+        document.querySelector("span[data-name='invoiceNumberBreadcrumb']").innerHTML = this.invoice.id;
+        document.querySelector("span[data-name='customerName']").innerHTML = this.invoice.customerName;
+        document.querySelector("span[data-name='customerId']").innerHTML = this.invoice.customerId;
     }
 
     public populateDataTable(dataList: InvoiceListRecord): void {

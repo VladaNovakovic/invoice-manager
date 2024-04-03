@@ -1,15 +1,34 @@
-import {InvoiceItemData, InvoiceListRecord} from "./types";
+import {InvoiceData, InvoiceItemData, InvoiceListRecord} from "./types";
 import {InvoiceItem} from "./InvoiceItem";
 
 export class Invoice {
     private readonly invoiceListData: InvoiceListRecord;
+    private readonly _id: string;
+    private readonly _customerId: string;
+    private readonly _customerName: string;
 
-    constructor(invoiceDataRaw: InvoiceItemData[]) {
+    constructor(invoiceDataRaw: InvoiceData) {
         this.invoiceListData = {};
 
-        invoiceDataRaw.forEach((item: InvoiceItemData, index: number) => {
+        this._id = invoiceDataRaw.id;
+        this._customerId = invoiceDataRaw.customerId;
+        this._customerName = invoiceDataRaw.customerName;
+
+        invoiceDataRaw.items.forEach((item: InvoiceItemData, index: number) => {
              this.invoiceListData[item.id] = new InvoiceItem(item);
         });
+    }
+
+    public get id(): string {
+        return this._id;
+    }
+
+    public get customerId(): string {
+        return this._customerId;
+    }
+
+    public get customerName(): string {
+        return this._customerName;
     }
 
     public get itemCount(): number {

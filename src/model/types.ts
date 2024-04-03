@@ -7,5 +7,12 @@ export type InvoiceItemData = {
     quantity: number;
 }
 
+export type InvoiceData = {
+    id: string;
+    customerId: string;
+    customerName: string;
+    items: InvoiceItemData[];
+}
+
 
 export type InvoiceListRecord = Record<number, InvoiceItem>;
