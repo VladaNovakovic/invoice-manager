@@ -40,7 +40,6 @@ export class InvoiceItem {
     }
 
     public applyDiscountAmount(amount: number): void {
-        console.log({amount});
         this._discountAmountEur = amount;
 
         const originalPrice = this.originalPrice;
@@ -50,10 +49,6 @@ export class InvoiceItem {
     public applyDiscountedPrice(amount: number): void {
         const discountAmount = this.originalPrice - amount;
         this.applyDiscountAmount(discountAmount);
-        // this._discountAmountEur = amount;
-        //
-        // const originalPrice = this.originalPrice;
-        // this._discountAmountPercentage = (this._discountAmountEur / originalPrice) * 100;
     }
 
 }

@@ -7,7 +7,6 @@ export class InvoiceController {
         this.invoice = dataProvider;
     }
 
-    // todo maybe move this to Invoice.ts
     public handleTotalPercentageChange(event: InputEvent): void {
         const invoiceOriginalPrice = this.invoice.getOriginalPrice();
         const value = parseFloat((event.target as HTMLInputElement).value);
